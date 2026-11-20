@@ -1,0 +1,91 @@
+.site-header {
+  height: 92px;
+  width: 100%;
+  padding: 0 4.65%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 20;
+  background: #080808;
+}
+.site-brand {
+  color: var(--nitro-acid);
+  font-size: 21px;
+  line-height: 1;
+  font-weight: 950;
+  font-style: italic;
+  letter-spacing: -1.5px;
+  transform: skew(-9deg);
+}
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(40px, 8vw, 130px);
+  margin-left: 6%;
+}
+.site-nav__link {
+  color: #f5f5f5;
+  font-size: 13px;
+  transition: color .2s ease;
+}
+.site-nav__link:hover,
+.site-nav__link.is-active { color: var(--nitro-acid); }
+.header-buy-button {
+  width: 129px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  background: var(--nitro-acid);
+  color: #080808;
+  font-size: 12px;
+  font-weight: 700;
+  transition: transform .2s ease, background .2s ease;
+}
+.header-buy-button:hover { transform: translateY(-2px); background: #f3ff18; }
+.mobile-menu-toggle {
+  display: none;
+  padding: 8px;
+  color: white;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.route-content { min-height: calc(100vh - 92px); }
+@media (max-width: 900px) {
+  .site-header { height: 76px; padding: 0 5%; }
+  .site-nav { gap: 26px; margin-left: 0; }
+  .route-content { min-height: calc(100vh - 76px); }
+}
+@media (max-width: 600px) {
+  .site-header { height: 70px; }
+  .site-brand { font-size: 20px; }
+  .mobile-menu-toggle {
+    display: grid;
+    place-items: center;
+    margin-left: auto;
+  }
+  .header-buy-button {
+    width: 94px;
+    height: 35px;
+    margin-left: 10px;
+    font-size: 11px;
+  }
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    padding: 22px 5% 26px;
+    background: rgba(8,8,8,.98);
+    border-top: 1px solid #262626;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+  }
+  .site-nav.site-nav--open { display: flex; }
+  .site-nav__link { font-size: 14px; }
+  .route-content { min-height: calc(100vh - 70px); }
+}

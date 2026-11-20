@@ -1,0 +1,67 @@
+.since-section {
+  --since-acid: #e5f000;
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: calc(100svh - 92px);
+  overflow: hidden;
+  background: radial-gradient(ellipse at 58% 52%, #171717 0%, #090909 56%, #030303 100%);
+  color: var(--since-acid);
+}
+.since-photo {
+  position: absolute;
+  z-index: 0;
+  left: 3.35%;
+  top: 9.4%;
+  width: 46.4%;
+  height: 79.3%;
+  overflow: hidden;
+  border-radius: 34px;
+  background: #191919;
+}
+.since-photo > img { width: 100%; height: 100%; display: block; object-fit: cover; filter: grayscale(1) contrast(1.12); }
+.since-photo-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.08), rgba(0,0,0,.22)), linear-gradient(0deg, rgba(0,0,0,.24), transparent 40%); }
+.since-can { position: absolute; z-index: 1; left: 11.4%; top: 25%; width: 78%; pointer-events: none; }
+.since-can img { display: block; width: 100%; height: auto; filter: drop-shadow(0 22px 30px rgba(0,0,0,.6)); mix-blend-mode: screen; }
+.since-heading {
+  position: absolute;
+  z-index: 2;
+  top: 17.5%;
+  right: 4.8%;
+  width: 31%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--since-acid);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: clamp(66px, 7.8vw, 150px);
+  font-style: italic;
+  font-weight: 950;
+  letter-spacing: -.065em;
+  line-height: .98;
+  text-transform: uppercase;
+  transform: skew(-5deg);
+}
+.since-heading span { white-space: nowrap; }
+.since-heading span:nth-child(2) { margin-left: 2%; }
+.since-heading span:nth-child(3) { margin-top: 3%; }
+.since-heading span:nth-child(4) { margin-top: 1%; }
+@media (min-width: 1600px) { .since-heading { font-size: clamp(140px, 7.8vw, 170px); } }
+@media (max-width: 900px) {
+  .since-section { min-height: 760px; }
+  .since-photo { left: 5%; top: 8%; width: 64%; height: 72%; border-radius: 26px; }
+  .since-can { left: 7%; top: 34%; width: 88%; }
+  .since-heading { top: 14%; right: 4%; width: auto; font-size: clamp(62px, 10vw, 100px); }
+}
+@media (max-width: 600px) {
+  .since-section { min-height: 740px; }
+  .since-photo { left: 5%; top: 6%; width: 90%; height: 58%; border-radius: 22px; }
+  .since-heading { top: 9%; right: 6%; width: auto; font-size: clamp(48px, 13vw, 76px); line-height: .94; }
+  .since-can { left: -5%; top: 42%; width: 112%; }
+}
+@media (max-width: 380px) {
+  .since-section { min-height: 660px; }
+  .since-heading { font-size: 46px; }
+  .since-can { top: 43%; }
+}
